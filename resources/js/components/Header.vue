@@ -23,7 +23,7 @@
 
               <li class="nav-item">
                 <!-- <a class="nav-link" href="/contatti">Contatti</a> -->
-                <router-link class="nav-link" :to="{name: 'posts'}">Articoli</router-link>
+                <router-link class="nav-link" :to="{name: 'blog'}">Articoli</router-link>
               </li>
            
             </ul>

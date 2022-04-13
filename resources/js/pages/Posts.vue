@@ -5,13 +5,7 @@
 
             <div class="row">
                 <div class="col-6" v-for="post in posts" :key="post.id">
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title">{{ post.title }}</h5>
-                    <p class="card-text">{{ post.content }}</p>
-                    <a href="#" class="btn btn-primary">Vedi articolo completo</a>
-                    </div>
-                </div>
+                    <Post :post='post'/>
                 </div>
             </div>
 
@@ -29,9 +23,13 @@
 </template>
 
 <script>
-export default {
-    name: 'MyMain',
+import Post from '../components/Post.vue';
 
+export default {
+    name: 'Posts',
+    components: {
+        Post
+    },
     data() {
         return {
             posts: [],
