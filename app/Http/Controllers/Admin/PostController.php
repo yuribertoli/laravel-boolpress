@@ -49,7 +49,7 @@ class PostController extends Controller
             'content' => 'required|min:10',
             'category_id' => 'nullable|exists:categories,id',
             'tags' => 'nullable|exists:tags,id',
-            'image' => 'nullable|image|max:2048' //max 2mb, si esprime in kilobyte
+            'image' => 'nullable|mimes:jpg,jpeg,png,bmp,gif,svg,webp|max:2048' //max 2mb, si esprime in kilobyte
         ]);
 
         $data = $request->all();
@@ -75,7 +75,11 @@ class PostController extends Controller
         $post = new Post();
         $post->fill($data);
         $post->save();
-        $post->tags()->sync($data['tags']);
+
+        if (isset($data['tags'])){
+            $post->tags()->sync($data['tags']);
+        }
+
         return redirect()->route('admin.posts.index');
         
     }
@@ -120,7 +124,7 @@ class PostController extends Controller
                 'content' => 'required|min:10',
                 'category_id' => 'nullable|exists:categories,id',
                 'tags' => 'nullable|exists:tags,id',
-                'image' => 'nullable|image|max:2048' //max 2mb, si esprime in kilobyte
+                'image' => 'nullable|mimes:jpg,jpeg,png,bmp,gif,svg,webp|max:2048' //max 2mb, si esprime in kilobyte
             ]
         );
 
@@ -149,7 +153,11 @@ class PostController extends Controller
 
         $post->update($data);
         $post->save();
-        $post->tags()->sync($data['tags']);
+
+        if (isset($data['tags'])){
+            $post->tags()->sync($data['tags']);
+        }
+
         return redirect()->route('admin.posts.show', ['post' => $post->id]);
 
     }

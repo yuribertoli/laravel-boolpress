@@ -18,14 +18,14 @@ class PostController extends Controller
 
         $posts = Post::with(['category', 'tags'])->paginate(2); //per avere solo 2 elementi per pagina
 
-        $posts->each(function($post) {
+        foreach ($posts as $post){
 
             if ($post->cover) {
                 $post->cover = url('storage/'.$post->cover);
             } else {
                 $post->cover = url('img/fallback.jpg');
             }
-        });
+        }
 
         return response()->json(
             [

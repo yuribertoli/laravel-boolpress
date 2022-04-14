@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-body">
 
-            <img :src="img">
+            <img :src="post.cover" :alt='post.title'> 
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ truncateTXT(post.content) }}</p>
 

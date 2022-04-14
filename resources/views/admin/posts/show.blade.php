@@ -12,7 +12,7 @@
                         @if ($post->cover)
                             <img src="{{asset('storage/' . $post->cover)}}" alt="{{$post->title}}">
                         @else
-                            <img src="{{asset('img/fallback.img')}}" alt="{{$post->title}}">
+                            <img src="{{asset('img/fallback.jpg')}}" alt="{{$post->title}}">
                         @endif
 
                         <h5 class="card-title">{{$post->title}}</h5>

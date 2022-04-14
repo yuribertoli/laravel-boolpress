@@ -3582,7 +3582,7 @@ var render = function () {
       "div",
       { staticClass: "card-body" },
       [
-        _c("img", { attrs: { src: _vm.img } }),
+        _c("img", { attrs: { src: _vm.post.cover, alt: _vm.post.title } }),
         _vm._v(" "),
         _c("h5", { staticClass: "card-title" }, [
           _vm._v(_vm._s(_vm.post.title)),

@@ -25,6 +25,10 @@ Route::middleware('auth')
     Route::resource('tags', 'TagController');
 });
 
+Route::get('/phpinfo', function() {
+    phpinfo();
+});
+
 Route::get('{any?}', function() {
     return view('guests.home');
 })->where('any', '.*');
