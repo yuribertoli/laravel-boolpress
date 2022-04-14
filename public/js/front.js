@@ -2020,6 +2020,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Post',
   props: {
@@ -3580,6 +3582,8 @@ var render = function () {
       "div",
       { staticClass: "card-body" },
       [
+        _c("img", { attrs: { src: _vm.img } }),
+        _vm._v(" "),
         _c("h5", { staticClass: "card-title" }, [
           _vm._v(_vm._s(_vm.post.title)),
         ]),
@@ -20107,7 +20111,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Henry\Documents\Boolean\GitHub\Nuova cartella\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Henry\Documents\Boolean\GitHub\laravel-boolpress\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

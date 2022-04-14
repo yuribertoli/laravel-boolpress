@@ -2,10 +2,12 @@
 
     <div class="card">
         <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
-        <p class="card-text">{{ truncateTXT(post.content) }}</p>
 
-        <router-link class="btn btn-primary" :to="{name: 'single-post', params: {slug: post.slug}}">Vedi articolo completo</router-link>
+            <img :src="img">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ truncateTXT(post.content) }}</p>
+
+            <router-link class="btn btn-primary" :to="{name: 'single-post', params: {slug: post.slug}}">Vedi articolo completo</router-link>
 
         </div>
     </div>
